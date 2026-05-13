@@ -14,6 +14,11 @@ program futbolito{
 	keyboard.i().onPressDo({pelota.volverAPosicionInicial()})
 	keyboard.b().onPressDo({lionel.irAPelota()})
 	keyboard.c().onPressDo({lionel.cambiarCamiseta()})
+	keyboard.t().onPressDo({lionel.taquito()})
+	keyboard.l().onPressDo({lionel.levantarla()})
+
+	keyboard.p().onPressDo({lionel.patearla()})
+
 	game.start()
 
 

@@ -1,0 +1,11 @@
+// import objetos.*
+// describe "levantar la pelota" {
+//   test "hacer que la pelota suba una posicion" {
+//         lionel.position(pelota.position())
+//         assert.that(pelota.position()== lionel.position())
+//         //-----------------------------------------
+//         lionel.levantarla()
+//         //------------------------------
+
+//   }
+// }
