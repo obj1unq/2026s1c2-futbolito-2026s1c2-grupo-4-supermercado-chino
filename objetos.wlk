@@ -25,6 +25,16 @@ object lionel {
 	}
 
 	
+	method levantarla() {
+		if(pelota.position()== position){
+			pelota.subirPelota()
+			pelota.caePelota()
+		}
+	}
+
+
+
+	
 	
 }
 
@@ -38,6 +48,14 @@ object pelota {
 		position = game.at(0.max(position.x() - 2), position.y()) 
 	}
 
+	method subirPelota() {
+		position = position.up(1)
+	}
 
+	method caePelota() {
+		game.schedule(2000, { position = position.down(1)})
+
+	}
+	
 	
 }
