@@ -17,7 +17,6 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
-<<<<<<< HEAD
 
 	method taquito() {
 		if(pelota.position()== position){
@@ -27,19 +26,17 @@ object lionel {
 
 	
 	
-=======
 	method patearla() {
 		if (position == pelota.position()) {
 		pelota.moverPelotaDespuesDeSerPateada()
 		}
 	}
->>>>>>> main
 }
 
 
 object pelota {
 	const property image="pelota.png"
-<<<<<<< HEAD
+
 	var property position = game.at(5,5)	
 
 
@@ -49,8 +46,8 @@ object pelota {
 
 
 	
-=======
-	var property position = game.at(5,5)
+
+
 
     method moverPelotaDespuesDeSerPateada() {
 		if (self.esPosicionOptima()) {
@@ -82,5 +79,5 @@ object pelota {
 	method moverPelotaDespuesDeSerPateadaPeorCaso1() {
 		position = game.at(position.x() + 1 , position.y())
 	}
->>>>>>> main
+
 }
