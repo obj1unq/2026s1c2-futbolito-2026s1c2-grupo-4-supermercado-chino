@@ -31,19 +31,30 @@ object pelota {
 		if (self.esPosicionOptima()) {
 			self.moverPelotaDespuesDeSerPateadaMejorCaso()
 		} else {
-
+			self.moverPelotaDespuesDeSerPateadaPeoresCasos()
 		}
 	}
 
 	method esPosicionOptima() {
-		return self.position() 
+		return position.x() <= game.at(game.width() -4 , position.y()).x()
 	}
 
 	method moverPelotaDespuesDeSerPateadaMejorCaso() {
-		position = game.at(self.position().x() + 3 , 5)
+		position = game.at(position.x() + 3 , position.y())
 	}
 
-	method position() {
-		return position
+	method moverPelotaDespuesDeSerPateadaPeoresCasos() {
+		if (position.x() <= game.at(game.width() - 2 , position.y()).x()) {
+		self.moverPelotaDespuesDeSerPateadaSiFaltan2()
+		} else {
+		self.moverPelotaDespuesDeSerPateadaSiFalta1()
+		}
+	}
+	method moverPelotaDespuesDeSerPateadaSiFaltan2() {
+		position = game.at(position.x() + 2 , position.y())
+	}
+
+	method moverPelotaDespuesDeSerPateadaSiFalta1() {
+		position = game.at(position.x() + 1 , position.y())
 	}
 }
