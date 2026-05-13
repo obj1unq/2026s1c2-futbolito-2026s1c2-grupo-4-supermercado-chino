@@ -18,14 +18,16 @@ object lionel {
 	}
 	
 	method patearla() {
+		if (position == pelota.position()) {
 		pelota.moverPelotaDespuesDeSerPateada()
+		}
 	}
 }
 
 
 object pelota {
 	const property image="pelota.png"
-	var property position = game.at(5,5)
+	var property position = game.at(7,5)
 
     method moverPelotaDespuesDeSerPateada() {
 		if (self.esPosicionOptima()) {
@@ -44,17 +46,21 @@ object pelota {
 	}
 
 	method moverPelotaDespuesDeSerPateadaPeoresCasos() {
-		if (position.x() <= game.at(game.width() - 2 , position.y()).x()) {
-		self.moverPelotaDespuesDeSerPateadaSiFaltan2()
-		} else {
-		self.moverPelotaDespuesDeSerPateadaSiFalta1()
+		if (position.x() <= game.at(game.width() - 3 , position.y()).x()) {
+		self.moverPelotaDespuesDeSerPateadaPeorCaso2()
+		} else if (position.x() <= game.at(game.width() - 2 , position.y()).x()) {
+			self.moverPelotaDespuesDeSerPateadaPeorCaso1()
 		}
 	}
-	method moverPelotaDespuesDeSerPateadaSiFaltan2() {
+	method moverPelotaDespuesDeSerPateadaPeorCaso2() {
 		position = game.at(position.x() + 2 , position.y())
 	}
 
-	method moverPelotaDespuesDeSerPateadaSiFalta1() {
+	method moverPelotaDespuesDeSerPateadaPeorCaso1() {
 		position = game.at(position.x() + 1 , position.y())
+	}
+
+	method position() {
+		return position
 	}
 }
