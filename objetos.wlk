@@ -17,10 +17,33 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
+	method patearla() {
+		pelota.moverPelotaDespuesDeSerPateada()
+	}
 }
 
 
 object pelota {
 	const property image="pelota.png"
-	var property position = game.at(5,5)	
+	var property position = game.at(5,5)
+
+    method moverPelotaDespuesDeSerPateada() {
+		if (self.esPosicionOptima()) {
+			self.moverPelotaDespuesDeSerPateadaMejorCaso()
+		} else {
+
+		}
+	}
+
+	method esPosicionOptima() {
+		return self.position() 
+	}
+
+	method moverPelotaDespuesDeSerPateadaMejorCaso() {
+		position = game.at(self.position().x() + 3 , 5)
+	}
+
+	method position() {
+		return position
+	}
 }
