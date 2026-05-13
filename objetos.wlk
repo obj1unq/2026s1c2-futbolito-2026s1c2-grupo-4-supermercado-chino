@@ -27,7 +27,7 @@ object lionel {
 
 object pelota {
 	const property image="pelota.png"
-	var property position = game.at(7,5)
+	var property position = game.at(5,5)
 
     method moverPelotaDespuesDeSerPateada() {
 		if (self.esPosicionOptima()) {
@@ -58,9 +58,5 @@ object pelota {
 
 	method moverPelotaDespuesDeSerPateadaPeorCaso1() {
 		position = game.at(position.x() + 1 , position.y())
-	}
-
-	method position() {
-		return position
 	}
 }
